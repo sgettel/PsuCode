@@ -22,7 +22,7 @@ c
       character dateobs*10,ut*11,ra*11,dec*11,equinox*7,gascell*3,
      .          targname*18,HRSdata*80,junk*80,wat*8
       
-      real*8 params(ma),psf0(nmax)                        !Marquart param and error arrays
+      real*8 params(ma),psf0(nmax)                        !Marquardt param and error arrays
       
 
       open(42,file='coelho_models/4000_45_p00p00_red.dat')  !model stellar spectrum
@@ -48,7 +48,7 @@ c    want 6700-6750
      
       npixels1=npixels+2*nxtra  !extra space for spline 
       write(*,*) npixels1
-c      bccor=9.5100159d0*5.5d0   !km/s fudge factor for looks...
+c      bccor=9.5100159d0*5.5d0   !shift to match observations, for plots
 c      z=bccor/vlight
       z=0.d0
 
